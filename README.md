@@ -8,7 +8,9 @@ The image
 is expected to be black-and-white with an optional third color.
 
 White: Etch (Remove copper)
+
 Black: Trace (Leave copper, voronoi tesselate)
+
 Other: Hole/signal trace  (leave copper, etch around given perimeter)
 
 One source of inspiration for this project is the Visolate project which has

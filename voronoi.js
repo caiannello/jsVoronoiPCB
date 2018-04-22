@@ -70,6 +70,7 @@ var narr,carr;
 var paths;
 var lx,ly;
 var gcode,gjog,gcut,gfooter;
+var newcut;
 // ----------------------------------------------------------------------------
 // Loads an image, ensures it is black-and-white with an optional third 
 // color, then kicks off the image processing sequence.
@@ -539,6 +540,7 @@ function startShowPaths()
 	II=0;
 	lx=0;
 	ly=0;
+	newcut=true;
     ctx.fillStyle = "#000000";
     ctx.fillRect(0, 0, WW,HH);
     ctx.strokeStyle = "#FFFFFF";
@@ -588,7 +590,11 @@ function showPaths()
 	            gcode+='G1 X'+uxs+' Y'+uys+'\n';	    		
 				gcode+=gcut;
 			    ctx.strokeStyle = "#FFFFFFFF";
+			} else if (newcut)
+			{
+				gcode+=gcut;
 			}
+			newcut=false;
     		ctx.beginPath();
     		ctx.moveTo(x0,y0);
     		ctx.lineTo(x1,y1);

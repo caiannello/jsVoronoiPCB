@@ -2,14 +2,13 @@
 
 Voronoi PCB Project
 
-This project processes a bitmap image of Circuit Board artwork and outputs 
+This project processes a bitmap image of circuit coard artwork and outputs 
 gcode suitable for a laser engraver or similar machine.
 
-To reduce tool time, the board traces are Voronoi Tesselated. 
+To reduce tool time, the board traces are Voronoi tesselated. 
 ( https://en.wikipedia.org/wiki/Voronoi_diagram )
 
-The image
-is expected to be black-and-white with an optional third color.
+The image is expected to be black-and-white with an optional third color.
 
 White: Etch (Remove copper)
 Black: Trace (Leave copper, voronoi tesselate)
@@ -69,6 +68,8 @@ var tmpImg;						// used in canvas refresh
 var blockSize;					// cell size in interpolator
 var narr,carr;
 var paths;
+var lx,ly;
+var gcode,gjog,gcut,gfooter;
 // ----------------------------------------------------------------------------
 // Loads an image, ensures it is black-and-white with an optional third 
 // color, then kicks off the image processing sequence.
@@ -253,9 +254,9 @@ function startTagTraces()
 	setTimeout(tagTraces,10);
 }
 // ----------------------------------------------------------------------------
-// scans the whole image, flood-filling each sepearate trace (black region) 
+// scans the whole image, flood-filling each separate trace (black region) 
 // with a distinct color. This gives a starting image for doing the
-// voronoi tesselation.
+// Voronoi tesselation.
 // ----------------------------------------------------------------------------
 function tagTraces()
 {
@@ -347,7 +348,7 @@ function startInterpolate()
 //	rectangle into up to four pieces and repreat the process recursively.
 //
 //	The distance function is very expensive, so this strategy is intended
-//  to minimize calls to it.  It's better that a purely naive implementation,
+//  to minimize calls to it.  It's better than a purely naive implementation,
 //  but it could be improved a lot. 
 //
 //  This whole task is highly parallelizable, so that is one way to speed
@@ -413,7 +414,7 @@ function startEdges()
 	setTimeout(edges,50);	
 }
 // ----------------------------------------------------------------------------
-//	Simple edge detect to find pixel outlines of the plotted voronoi regions.
+//	Simple edge detect to find pixel outlines of the plotted Voronoi regions.
 //	These get vectorized in the next step.
 // ----------------------------------------------------------------------------
 function edges()
@@ -499,7 +500,6 @@ function vectorize()
 	}	
 }
 // ----------------------------------------------------------------------------
-var lx,ly,gcode,gjog,gcut,gfooter;
 function startShowPaths()
 {
     num_paths=paths.length;
@@ -774,9 +774,9 @@ function interpInner(x0,y0,x1,y1)
 }
 // ----------------------------------------------------------------------------
 //
-// find closest trace through outward taxicab spiral for voronoi plot.
+// find closest trace through outward taxicab spiral for Voronoi plot.
 //
-// The efficiency of this function greatly affects the time to do the voronoi.
+// The efficiency of this function greatly affects the time to do the Voronoi.
 //
 // ----------------------------------------------------------------------------
 function nearestColor(x0,y0)

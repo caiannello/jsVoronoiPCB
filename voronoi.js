@@ -644,6 +644,25 @@ function allDone()
 	done=true;
 }
 // ----------------------------------------------------------------------------
+function download(filename, data) {
+    var blob = new Blob([data], {type: 'text/csv'});
+    if(window.navigator.msSaveOrOpenBlob) {
+        window.navigator.msSaveBlob(blob, filename);
+    }
+    else{
+        var elem = window.document.createElement('a');
+        elem.href = window.URL.createObjectURL(blob);
+        elem.download = filename;        
+        document.body.appendChild(elem);
+        elem.click();        
+        document.body.removeChild(elem);
+    }
+}
+// ----------------------------------------------------------------------------
+/*
+
+/// Doesn't work in IE or Edge...
+
 function download(filename, text) 
 {
   var element = document.createElement('a');
@@ -654,6 +673,7 @@ function download(filename, text)
   element.click();
   document.body.removeChild(element);
 }
+*/
 // ----------------------------------------------------------------------------
 // This is what makes the toolpaths from the voronoi edge pixels.
 // It tries to replace collinear points with line segments for file size,

@@ -150,14 +150,24 @@ function loadImage()
 		{
 			pixelColor=[origImage.data[a+0], origImage.data[a+1], 
 							origImage.data[a+2]];
+			
+			// why does firefox add colors to a 2bpp image!?!
+			if(isBlack(pixelColor))
+				pixelColor=[0,0,0];
+			else if(isWhite(pixelColor))
+				pixelColor=[255,255,255];
+			else
+				pixelColor=[0,255,0];
+			// ------------------------------
+			
 			if(!arrayInArray(regionColors,pixelColor))
 			{
 				regionColors.push(pixelColor);
-				if(++numColors==4)
+				if(++numColors==3)
 					break;
 			}
 		}
-		if((numColors==4)||(!(arrayInArray(regionColors,[0,0,0])&&arrayInArray(regionColors,[255,255,255]))))
+		if((numColors>3)||(!(arrayInArray(regionColors,[0,0,0])&&arrayInArray(regionColors,[255,255,255]))))
 		{
 			alert(	"Image must contain black (for traces), "+
 					"white (for non-traces), and an optional "+
@@ -203,13 +213,13 @@ function loadImage()
 	}
 	function isWhite(c)
 	{
-		if((c[0]==255)&&(c[1]==255)&&(c[2]==255))
+		if((c[0]>=250)&&(c[1]>=250)&&(c[2]>=250))
 			return true;
 		return false;
 	}
 	function isBlack(c)
 	{
-		if(c[0]||c[1]||c[2]) 
+		if((c[0]>5)||(c[1]>5)||(c[2]>5)) 
 			return false;
 		return  true;
 	}

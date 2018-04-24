@@ -1,7 +1,7 @@
 # jsVoronoiPCB
 Javascript application to process a circuit board image and output G-code suitable for laser engraver or similar machine. To reduce tool time, the board traces are Voronoi Tesselated. https://en.wikipedia.org/wiki/Voronoi_diagram
 
-The image is expected to be black-and-white with an optional third color:
+The input image is expected to be black-and-white with an optional third color:
 
 WHITE: Etch (Remove copper)
 

@@ -579,7 +579,7 @@ function showPaths()
 
 			dx=Math.abs(lx-x0);
 			dy=Math.abs(ly-y0);
-			if((dx>1)||(dy>1))
+			if(((dx>1)||(dy>1))||((!XX)&&(!YY)))
 			{
 				gcode+=gjog;
 			    ctx.strokeStyle = "#FF000080";

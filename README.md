@@ -19,5 +19,5 @@ Input:
 Output:
 ![output](http://pugbutt.com/jsVoronoiPCB/img/output.png)
 
-Etched:
+Etched, Tinned:
 ![etched](http://pugbutt.com/jsVoronoiPCB/img/etched_board.jpg)

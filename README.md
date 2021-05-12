@@ -9,7 +9,12 @@ BLACK: Trace (Leave copper, voronoi tesselate)
 
 OTHER: Hole/signal trace  (leave copper, etch around given perimeter)
 
-One source of inspiration for this project is the Visolate project which has a similar aim but is written in Java: https://groups.csail.mit.edu/drl/wiki/index.php?title=Visolate:_Voronoi_Toolpaths_for_PCB_Mechanical_Etch
+Procedure:
+- Spray-paint a piece of copperclad PCB in flat black. (I used Krylon)
+- Etch in laser engraver using output from this applet. (I used an Eleksmaker A3 Pro, 2.5W)
+- Scrub with a soapy toothbrush to remove charred paint.
+- Etch board as normal with Ferric Chloride or equivalent.
+- Remove paint with acetone and swabs. (Selective removal of paint provides solder mask.)
 
 ------
 
@@ -21,3 +26,8 @@ Output:
 
 Etched, Tinned:
 ![etched](http://pugbutt.com/jsVoronoiPCB/img/etched.jpg)
+
+See Nurdrage's D.I.Y. tinning solution tutorial video here:
+https://hackaday.com/2017/10/23/tinning-solution-from-the-hardware-store/
+
+One source of inspiration for this project is the Visolate project which has a similar aim but is written in Java: https://groups.csail.mit.edu/drl/wiki/index.php?title=Visolate:_Voronoi_Toolpaths_for_PCB_Mechanical_Etch

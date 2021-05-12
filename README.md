@@ -17,6 +17,8 @@ Procedure:
 - Remove paint with acetone and swabs. (Selective removal of paint provides solder mask.)
 
 ------
+UI:
+![UI](http://pugbutt.com/jsVoronoiPCB/img/js_voronoi_ui.png)
 
 Input:
 ![input](http://pugbutt.com/jsVoronoiPCB/img/input_600dpi.png)

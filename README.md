@@ -32,4 +32,7 @@ Etched, Tinned:
 See Nurdrage's D.I.Y. tinning solution tutorial video here:
 https://hackaday.com/2017/10/23/tinning-solution-from-the-hardware-store/
 
+I have a live demo here:
+http://pugbutt.com/jsVoronoiPCB/voronoi_pcb.html
+
 One source of inspiration for this project is the Visolate project which has a similar aim but is written in Java: https://groups.csail.mit.edu/drl/wiki/index.php?title=Visolate:_Voronoi_Toolpaths_for_PCB_Mechanical_Etch
